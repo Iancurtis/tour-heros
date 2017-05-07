@@ -1,4 +1,5 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core';
+import { Observable } from "rxjs/Rx";
 
 @Component({
   selector: 'my-app',
@@ -9,9 +10,18 @@ import { Component } from '@angular/core'
       <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
     </nav>
     <router-outlet></router-outlet>
+    <button id="start">Test</button>
   `,
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = "Tour of Heroes"
+export class AppComponent implements OnInit {
+  title = "Tour of Heroes";
+  ngOnInit() {
+    const startButton = document.querySelector('#start');
+    Observable.fromEvent(startButton, 'click')
+      .subscribe((event) => {
+        Observable.interval(1000)
+          .subscribe((x) => console.log(x));
+      })
+  }
 }
