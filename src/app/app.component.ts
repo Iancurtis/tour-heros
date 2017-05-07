@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from "rxjs/Rx";
+import { Observable } from 'rxjs/Rx';
 
 @Component({
   selector: 'my-app',
@@ -15,13 +15,13 @@ import { Observable } from "rxjs/Rx";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = "Tour of Heroes";
+  title = 'Tour of Heroes';
   ngOnInit() {
     const startButton = document.querySelector('#start');
     Observable.fromEvent(startButton, 'click')
       .subscribe((event) => {
         Observable.interval(1000)
           .subscribe((x) => console.log(x));
-      })
+      });
   }
 }

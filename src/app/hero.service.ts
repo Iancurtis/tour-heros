@@ -6,16 +6,16 @@ import { HEROES } from './mock-heroes';
 // <-- Don't forget the parentheses. Omitting them leads to an error that's difficult to diagnose.
 @Injectable()
 export class HeroService {
-    getHeroes(): Promise<Hero[]> {
-        return Promise.resolve(HEROES);
-    }
-    getHeroesSlowly(): Promise<Hero[]> {
-        return new Promise(resolve => {
-            setTimeout(() => resolve(this.getHeroes()), 2000)
-        })
-    }
+  getHeroes(): Promise<Hero[]> {
+    return Promise.resolve(HEROES);
+  }
+  getHeroesSlowly(): Promise<Hero[]> {
+    return new Promise(resolve => {
+      setTimeout(() => resolve(this.getHeroes()), 2000);
+    });
+  }
 
-    getHero(id: number): Promise<Hero> {
-        return this.getHeroes().then(heroes => heroes.find(hero => hero.id === id)) 
-    }
+  getHero(id: number): Promise<Hero> {
+    return this.getHeroes().then(heroes => heroes.find(hero => hero.id === id));
+  }
 }
