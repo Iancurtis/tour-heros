@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
-import { RouterModule } from "@angular/router";
+import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // <-- custom module
 import { AppRoutingModule } from "./app-routing.module";
@@ -18,6 +19,7 @@ import { HeroService } from "./hero.service";
     BrowserModule,
     FormsModule, // <-- import the FormsModule before binding with [(ngModel)]
     AppRoutingModule,
+    BrowserAnimationsModule,
   ],
   declarations: [
     AppComponent,
