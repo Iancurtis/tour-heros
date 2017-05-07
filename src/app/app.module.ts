@@ -11,7 +11,11 @@ import { AppComponent } from './app.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { DashboardComponent } from './dashboard.component';
 import { HeroesComponent } from './heroes.component';
+import { AttributeDirectiveComponent } from './attribute-directive.component';
 import { HeroService } from './hero.service';
+
+// <-- directive
+import { HighlightDirective } from './directive/highlight.directive';
 
 @NgModule({
   imports: [ // <-- which contains the list of external modules that the app uses
@@ -25,6 +29,8 @@ import { HeroService } from './hero.service';
     HeroDetailComponent,
     HeroesComponent,
     DashboardComponent,
+    AttributeDirectiveComponent,
+    HighlightDirective,
   ],
   providers: [
     HeroService
