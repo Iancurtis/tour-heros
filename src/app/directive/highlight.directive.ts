@@ -5,8 +5,10 @@ export class HighlightDirective {
 
   @Input('myHighlight') highlightColor: string;
 
+  @Input() defaultColor: string;
+
   @HostListener('mouseenter') onMouseEnter() {
-    this.highlight(this.highlightColor || 'red');
+    this.highlight(this.highlightColor || this.defaultColor || 'red');
   }
 
   @HostListener('mouseleave') onMouseLeave() {
