@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AttributeDirectiveComponent implements OnInit {
+  color = 'orange';
+
   constructor() { }
 
   ngOnInit() { }
